@@ -6,10 +6,15 @@
  * @stack: Pointer to the stack structures
  */
 
-void pall(Stack *stack)
+void pall_data(stack_t **stack, unsigned int line_number)
 {
-	for (int i = stack->top; i >= 0; i--)
+	stack_t *temp;
+	(void) line_number;
+	
+	temp = *stack;
+	while (temp)
 	{
-		printf("%d\n", stack->data[i])
+		printf("%d\n", temp->n);
+		temp = temp->next;
 	}
 }

@@ -11,11 +11,16 @@
 
 void pop_data(stack_t **stack, unsigned int line_number)
 {
-	if (isStackEmpty(stack))
-	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+	stack_t *head;
+	(void)line_number;
 
-	return (stack->data[stack->top--]);
+	if (*stack == NULL)
+		error_six();
+
+	head = *stack;
+	head = head->next;
+	free(*stack);
+	*stack = head;
+	if(head != NULL)
+		head->prev = NULL;
 }
