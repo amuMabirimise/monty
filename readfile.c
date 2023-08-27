@@ -18,20 +18,21 @@ void read_montyfile(const char *filename)
     while (fgets(line, sizeof(line), file) != NULL)
     {
         line[strcspn(line, "\n")] = '\0';
- 
+
         if (strncmp(line, "push", strlen("push")) == 0)
         {
-            get_push(&stack, line_number, line);
-        }
-	else if (strncmp(line, "pall", strlen("pall")) == 0)
+
+            char *arg = line + strlen("push") + 1;
+            get_push(&stack, line_number, arg);
+	}
+        else if (strncmp(line, "pall", strlen("pall")) == 0)
         {
             pall(&stack, line_number);
         }
- 
+
         line_number++;
     }
-
-    fclose(file);
+	fclose(file);
 
      get_free(stack);
 }

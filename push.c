@@ -60,6 +60,11 @@ int _isdigit(char *str)
         i++;
     }
 
+    if (str[i] == '\0')
+    {
+        return 1;
+    }
+
     while (str[i] != '\0')
     {
         if (!isdigit(str[i]))

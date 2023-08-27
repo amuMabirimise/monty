@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -29,6 +30,12 @@ typedef struct stack_s
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
+typedef struct details_s
+{
+    char *buf;
+    char **arr_command;
+
+} details_t;
 typedef struct instruction_s
 {
         char *opcode;
@@ -41,6 +48,9 @@ int _isdigit(char *str);
 void get_free(stack_t *stack);
 void pall(stack_t **stack, unsigned int line_number);
 void read_montyfile(const char *filename);
+void free_stack(stack_t *stack);
+void free_details(void);
+
 /* Add other function prototypes here if needed */
 
 #endif
