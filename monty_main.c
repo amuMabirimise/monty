@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     else
     {
         read_montyfile(argv[1]);
+	get_free(NULL);
     }
 
     return (EXIT_SUCCESS);

@@ -50,6 +50,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void read_montyfile(const char *filename);
 void free_stack(stack_t *stack);
 void free_details(void);
+void pint(stack_t **stack, unsigned int line_number);
 
 /* Add other function prototypes here if needed */
 
