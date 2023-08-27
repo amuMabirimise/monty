@@ -1,6 +1,10 @@
-#ifndef STACK_H
-#define STACK_H
+#ifndef MONTY_H
+#define MONTY_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -12,9 +16,9 @@
  */
 typedef struct stack_s
 {
-    int n;
-    struct stack_s *prev;
-    struct stack_s *next;
+        int n;
+        struct stack_s *prev;
+        struct stack_s *next;
 } stack_t;
 
 /**
@@ -27,22 +31,16 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-    char *opcode;
-    void (*f)(stack_t **stack, unsigned int line_number);
+        char *opcode;
+        void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/**
- * push - Pushes an element onto the stack.
- * @stack: Pointer to the stack's top.
- * @line_number: Line number in the Monty file.
- */
-void push(stack_t **stack, unsigned int line_number);
-
-/**
- * pall - Prints all the values on the stack.
- * @stack: Pointer to the stack's top.
- * @line_number: Line number in the Monty file.
- */
+/* Function prototypes */
+void get_push(stack_t **stack, unsigned int line_number, char *temp);
+int _isdigit(char *str);
+void get_free(stack_t *stack);
 void pall(stack_t **stack, unsigned int line_number);
+void read_montyfile(const char *filename);
+/* Add other function prototypes here if needed */
 
-#endif 
+#endif
