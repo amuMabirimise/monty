@@ -61,5 +61,6 @@ void error_four(void);
 void error_five(unsigned int line_number);
 void nop_data(stack_t **stack, unsigned int line_number);
 void swap_data(stack_t **stack, unsigned int line_number);
+void pop_data(stack_t **stack, unsigned int line_number);
 
 #endif
